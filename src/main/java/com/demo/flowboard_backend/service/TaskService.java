@@ -17,5 +17,7 @@ public interface TaskService {
 
     User updateTask(Long id, Task task);
 
+    String assignTask(Long taskId, Long userId);
+
     void deleteTask(Long id);
 }

@@ -9,9 +9,11 @@ services:
     depends_on:
       - postgres
     environment:
+        SPRING_PROFILES_ACTIVE: docker
         SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
         SPRING_DATASOURCE_USERNAME: postgres
         SPRING_DATASOURCE_PASSWORD: Cem@12345
+
 
   postgres:
     image: postgres:15

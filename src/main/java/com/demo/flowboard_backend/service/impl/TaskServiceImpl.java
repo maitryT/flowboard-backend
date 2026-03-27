@@ -52,6 +52,16 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
+    public String assignTask(Long taskId, Long userId) {
+        Task task = taskRepository.findById(taskId).orElseThrow(()-> new RuntimeException("Task not found"));
+
+        task.setUserId(userId);
+        taskRepository.save(task);
+
+        return "Success";
+    }
+
+    @Override
     public void deleteTask(Long id) {
         taskRepository.deleteById(id);
     }
